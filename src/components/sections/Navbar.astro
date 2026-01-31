@@ -1,0 +1,18 @@
+---
+import Logo from "./navbar/Logo.astro";
+import Menu from "./navbar/Menu.astro";
+import CTA from "./navbar/CTA.astro";
+---
+
+<nav class="absolute top-4 w-full">
+  <div
+    class="bg-primary text-primary relative container mx-auto flex items-center justify-between rounded-xl px-4 py-3 backdrop-blur-md md:rounded-2xl"
+  >
+    <!-- Logo -->
+    <Logo />
+    <!-- Menu -->
+    <Menu />
+    <!-- Desktop CTA + Hamburger -->
+    <CTA />
+  </div>
+</nav>

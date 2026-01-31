@@ -21,3 +21,21 @@
     height: 100%;
   }
 </style>
+<script>
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
+
+  btn?.addEventListener("click", () => {
+    const isOpen = menu?.classList.contains("opacity-100");
+
+    menu?.classList.toggle("opacity-100");
+    menu?.classList.toggle("translate-y-0");
+    menu?.classList.toggle("pointer-events-auto");
+
+    menu?.classList.toggle("opacity-0");
+    menu?.classList.toggle("translate-y-2");
+    menu?.classList.toggle("pointer-events-none");
+
+    btn?.setAttribute("aria-expanded", String(!isOpen));
+  });
+</script>

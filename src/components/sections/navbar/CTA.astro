@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="flex items-center gap-2">
+  <button
+    class="hover:bg-primary hidden items-center gap-2 rounded-lg border border-white bg-white px-3 py-1.5 transition hover:border-white hover:text-white md:flex"
+  >
+    <span>Let's Talk</span>
+    <Icon name="lucide:arrow-right" class="h-4 w-4" />
+  </button>
+
+  <button
+    id="menuBtn"
+    class="md:hidden"
+    aria-label="Toggle menu"
+    aria-expanded="false"
+  >
+    <Icon name="lucide:menu" class="h-7 w-7" />
+  </button>
+</div>
