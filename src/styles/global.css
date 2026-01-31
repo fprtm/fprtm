@@ -1,12 +1,48 @@
 @import "tailwindcss";
 
-.container {
-  @apply mx-auto w-11/12 md:w-10/12 lg:w-10/12;
-}
-
+/* Custom Theme */
 @theme {
   --color-primary: var(--color-sky-900);
   --color-secondary: var(--color-white);
   --color-accent: var(--color-sky-500);
   --color-accent-hover: var(--color-sky-600);
+}
+
+/* Custom Utilities and Styles */
+.container {
+  @apply mx-auto w-11/12 md:w-10/12 lg:w-10/12;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes floatBlob {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.bg-animated {
+  background: linear-gradient(90deg, white, white, var(--color-primary));
+  background-size: 300% 300%;
+  animation: gradientMove 5s ease infinite;
+}
+
+.blob-float {
+  animation: floatBlob 5s ease infinite;
 }
