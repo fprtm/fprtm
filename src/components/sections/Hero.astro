@@ -1,0 +1,38 @@
+---
+import HeroBackground from "./hero/HeroBackground.astro";
+import HeroCodeCard from "./hero/HeroCodeCard.astro";
+import HeroContent from "./hero/HeroContent.astro";
+
+interface Props {
+  heroData: {
+    title: string;
+    description: string;
+    buttons: {
+      primary: { text: string; href: string; icon: string };
+      secondary: { text: string; href: string; icon: string };
+    };
+    badges: { text: string; icon: string }[];
+    codeCard: { title: string };
+  };
+  code: string;
+}
+
+const { heroData, code } = Astro.props;
+---
+
+<section class="flex min-h-screen w-full items-center py-20">
+  <!-- Background Glass Blur -->
+  <HeroBackground />
+  <!-- Content -->
+  <div class="container mx-auto grid items-center gap-16 px-6 md:grid-cols-2">
+    <!-- LEFT: Text Content -->
+    <HeroContent
+      title={heroData.title}
+      description={heroData.description}
+      buttons={heroData.buttons}
+      badges={heroData.badges}
+    />
+    <!-- RIGHT: Code Card -->
+    <HeroCodeCard title={heroData.codeCard.title} code={code} />
+  </div>
+</section>

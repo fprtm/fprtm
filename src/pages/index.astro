@@ -1,11 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import "../styles/global.css";
-import Navbar from "../components/Navbar.astro";
-import Hero from "../components/Hero.astro";
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/global.css";
+import Navbar from "@/components/common/Navbar.astro";
+import Hero from "@/components/sections/Hero.astro";
+
+// Data Imports
+import { navItems, navCta } from "@/lib/data/common/navigation";
+import { logoData } from "@/lib/data/common/logo";
+import { heroData } from "@/lib/data/home/hero";
+import { code } from "@/lib/data";
 ---
 
 <Layout>
-  <Navbar />
-  <Hero />
+  <Navbar navItems={navItems} logoData={logoData} ctaData={navCta} />
+  <Hero heroData={heroData} code={code} />
 </Layout>
