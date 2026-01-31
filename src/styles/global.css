@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+.container {
+  @apply mx-auto w-11/12 md:w-10/12 lg:w-10/12;
+}
+
+@theme {
+  --color-primary: var(--color-sky-900);
+  --color-secondary: var(--color-white);
+  --color-accent: var(--color-sky-500);
+  --color-accent-hover: var(--color-sky-600);
+}

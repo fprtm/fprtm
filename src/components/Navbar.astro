@@ -1,0 +1,79 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<nav class="absolute top-4 w-full">
+  <div
+    class="bg-primary/30 text-primary relative container mx-auto flex items-center justify-between rounded-xl px-4 py-3 backdrop-blur-md md:rounded-2xl"
+  >
+    <!-- Logo -->
+    <a href="#" class="flex flex-col items-start">
+      <span class="text-xl font-bold">FP</span>
+      <span class="hidden text-xs md:block">/ferrypratama</span>
+    </a>
+
+    <!-- Menu -->
+    <ul
+      id="menu"
+      class="bg-primary/30 pointer-events-none absolute top-full left-0 flex w-full translate-y-0 flex-col gap-5 rounded-xl px-4 pt-8 pb-4 opacity-0 transition-all duration-300 ease-out md:pointer-events-auto md:static md:w-auto md:translate-y-0 md:flex-row md:items-center md:gap-8 md:bg-transparent md:p-0 md:opacity-100"
+    >
+      <li><a href="#" class="block transition hover:opacity-80">Home</a></li>
+      <li>
+        <a href="#" class="block transition hover:opacity-80">Approach</a>
+      </li>
+      <li><a href="#" class="block transition hover:opacity-80">Work</a></li>
+      <li>
+        <a href="#" class="block transition hover:opacity-80">Services</a>
+      </li>
+      <li><a href="#" class="block transition hover:opacity-80">Contact</a></li>
+
+      <!-- Mobile CTA -->
+      <li class="md:hidden">
+        <button
+          class="hover:bg-primary hover:border-primary flex items-center gap-2 rounded-lg border border-white bg-white px-3 py-1.5 transition hover:text-white md:flex md:hidden"
+        >
+          <span>Let's Talk</span>
+          <Icon name="lucide:arrow-right" class="h-4 w-4" />
+        </button>
+      </li>
+    </ul>
+
+    <!-- Desktop CTA + Hamburger -->
+    <div class="flex items-center gap-2">
+      <button
+        class="hover:bg-primary hover:border-primary hidden items-center gap-2 rounded-lg border border-white bg-white px-3 py-1.5 transition hover:text-white md:flex"
+      >
+        <span>Let's Talk</span>
+        <Icon name="lucide:arrow-right" class="h-4 w-4" />
+      </button>
+
+      <button
+        id="menuBtn"
+        class="md:hidden"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <Icon name="lucide:menu" class="h-7 w-7" />
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
+
+  btn?.addEventListener("click", () => {
+    const isOpen = menu?.classList.contains("opacity-100");
+
+    menu?.classList.toggle("opacity-100");
+    menu?.classList.toggle("translate-y-0");
+    menu?.classList.toggle("pointer-events-auto");
+
+    menu?.classList.toggle("opacity-0");
+    menu?.classList.toggle("translate-y-2");
+    menu?.classList.toggle("pointer-events-none");
+
+    btn?.setAttribute("aria-expanded", String(!isOpen));
+  });
+</script>
