@@ -1,0 +1,27 @@
+---
+import { createHighlighter } from "shiki";
+
+const { code, lang = "ts", theme = "github-dark" } = Astro.props;
+
+const highlighter = await createHighlighter({
+  themes: [theme],
+  langs: [lang],
+});
+
+const html = highlighter.codeToHtml(code, {
+  lang,
+  theme,
+});
+---
+
+<div class="font-mono text-xs leading-relaxed">
+  <div set:html={html} />
+</div>
+
+<style is:global>
+  pre.shiki {
+    background-color: transparent !important;
+    margin: 0;
+    padding: 0;
+  }
+</style>

@@ -4,10 +4,10 @@ import { Icon } from "astro-icon/components";
 
 <nav class="absolute top-4 w-full">
   <div
-    class="bg-primary/30 text-primary relative container mx-auto flex items-center justify-between rounded-xl px-4 py-3 backdrop-blur-md md:rounded-2xl"
+    class="bg-primary text-primary relative container mx-auto flex items-center justify-between rounded-xl px-4 py-3 backdrop-blur-md md:rounded-2xl"
   >
     <!-- Logo -->
-    <a href="#" class="flex flex-col items-start">
+    <a href="#" class="flex flex-col items-start text-white">
       <span class="text-xl font-bold">FP</span>
       <span class="hidden text-xs md:block">/ferrypratama</span>
     </a>
@@ -15,7 +15,7 @@ import { Icon } from "astro-icon/components";
     <!-- Menu -->
     <ul
       id="menu"
-      class="bg-primary/30 pointer-events-none absolute top-full left-0 flex w-full translate-y-0 flex-col gap-5 rounded-xl px-4 pt-8 pb-4 opacity-0 transition-all duration-300 ease-out md:pointer-events-auto md:static md:w-auto md:translate-y-0 md:flex-row md:items-center md:gap-8 md:bg-transparent md:p-0 md:opacity-100"
+      class="bg-primary pointer-events-none absolute top-full left-0 flex w-full translate-y-0 flex-col gap-5 rounded-xl px-4 pt-8 pb-4 text-white opacity-0 transition-all duration-300 ease-out md:pointer-events-auto md:static md:w-auto md:translate-y-0 md:flex-row md:items-center md:gap-8 md:bg-transparent md:p-0 md:opacity-100"
     >
       <li><a href="#" class="block transition hover:opacity-80">Home</a></li>
       <li>
@@ -30,7 +30,7 @@ import { Icon } from "astro-icon/components";
       <!-- Mobile CTA -->
       <li class="md:hidden">
         <button
-          class="hover:bg-primary hover:border-primary flex items-center gap-2 rounded-lg border border-white bg-white px-3 py-1.5 transition hover:text-white md:flex md:hidden"
+          class="hover:bg-primary flex items-center gap-2 rounded-lg border border-white bg-white px-3 py-1.5 transition hover:border-white hover:text-white md:flex md:hidden"
         >
           <span>Let's Talk</span>
           <Icon name="lucide:arrow-right" class="h-4 w-4" />
@@ -41,7 +41,7 @@ import { Icon } from "astro-icon/components";
     <!-- Desktop CTA + Hamburger -->
     <div class="flex items-center gap-2">
       <button
-        class="hover:bg-primary hover:border-primary hidden items-center gap-2 rounded-lg border border-white bg-white px-3 py-1.5 transition hover:text-white md:flex"
+        class="hover:bg-primary hidden items-center gap-2 rounded-lg border border-white bg-white px-3 py-1.5 transition hover:border-white hover:text-white md:flex"
       >
         <span>Let's Talk</span>
         <Icon name="lucide:arrow-right" class="h-4 w-4" />
