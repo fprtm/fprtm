@@ -1,28 +1,40 @@
 ---
 import { Icon } from "astro-icon/components";
+import type { NavItem } from "@/lib/data/common/navigation";
+
+interface Props {
+  items: NavItem[];
+  cta: {
+    text: string;
+    href: string;
+    icon: string;
+  };
+}
+
+const { items, cta } = Astro.props;
 ---
 
 <ul
   id="menu"
   class="bg-primary pointer-events-none absolute top-full left-0 flex w-full translate-y-0 flex-col gap-5 rounded-xl px-4 pt-8 pb-4 text-white opacity-0 transition-all duration-300 ease-out md:pointer-events-auto md:static md:w-auto md:translate-y-0 md:flex-row md:items-center md:gap-8 md:bg-transparent md:p-0 md:opacity-100"
 >
-  <li><a href="#" class="block transition hover:opacity-80">Home</a></li>
-  <li>
-    <a href="#" class="block transition hover:opacity-80">Approach</a>
-  </li>
-  <li><a href="#" class="block transition hover:opacity-80">Work</a></li>
-  <li>
-    <a href="#" class="block transition hover:opacity-80">Services</a>
-  </li>
-  <li><a href="#" class="block transition hover:opacity-80">Contact</a></li>
+  {
+    items.map((item) => (
+      <li>
+        <a href={item.href} class="block transition hover:opacity-80">
+          {item.title}
+        </a>
+      </li>
+    ))
+  }
 
   <!-- Mobile CTA -->
   <li class="md:hidden">
     <button
       class="hover:bg-primary flex items-center gap-2 rounded-lg border border-white bg-white px-3 py-1.5 transition hover:border-white hover:text-white md:flex md:hidden"
     >
-      <span>Let's Talk</span>
-      <Icon name="lucide:arrow-right" class="h-4 w-4" />
+      <span>{cta.text}</span>
+      <Icon name={cta.icon} class="h-4 w-4" />
     </button>
   </li>
 </ul>

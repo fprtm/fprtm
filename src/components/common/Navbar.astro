@@ -1,0 +1,39 @@
+---
+import Logo from "./navbar/Logo.astro";
+import Menu from "./navbar/Menu.astro";
+import CTA from "./navbar/CTA.astro";
+import type { NavItem } from "@/lib/data/common/navigation";
+
+interface Props {
+  navItems: NavItem[];
+  logoData: {
+    brandInitial: string;
+    brandHandle: string;
+    href: string;
+  };
+  ctaData: {
+    text: string;
+    href: string;
+    icon: string;
+  };
+}
+
+const { navItems, logoData, ctaData } = Astro.props;
+---
+
+<nav class="absolute top-4 w-full">
+  <div
+    class="bg-primary text-primary relative container mx-auto flex items-center justify-between rounded-xl px-4 py-3 backdrop-blur-md md:rounded-2xl"
+  >
+    <!-- Logo -->
+    <Logo
+      brandInitial={logoData.brandInitial}
+      brandHandle={logoData.brandHandle}
+      href={logoData.href}
+    />
+    <!-- Menu -->
+    <Menu items={navItems} cta={ctaData} />
+    <!-- Desktop CTA + Hamburger -->
+    <CTA text={ctaData.text} href={ctaData.href} icon={ctaData.icon} />
+  </div>
+</nav>

@@ -1,6 +1,12 @@
 ---
-import { code } from "../../../lib/data";
-import CodeBlock from "../../ui/CodeBlock.astro";
+import CodeBlock from "@/components/ui/CodeBlock.astro";
+
+interface Props {
+  title: string;
+  code: string;
+}
+
+const { title, code } = Astro.props;
 ---
 
 <div class="group relative mx-auto w-full max-w-lg">
@@ -21,7 +27,7 @@ import CodeBlock from "../../ui/CodeBlock.astro";
         <div class="h-3 w-3 rounded-full bg-yellow-400"></div>
         <div class="h-3 w-3 rounded-full bg-green-400"></div>
       </div>
-      <p class="text-primary/70 text-sm italic">Status-Available.ts</p>
+      <p class="text-primary/70 text-sm italic">{title}</p>
     </div>
 
     <!-- Code -->
