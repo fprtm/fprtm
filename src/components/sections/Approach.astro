@@ -1,12 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
 import { githubData } from "@/lib/data/common/github";
+import { approachData } from "@/lib/data/sections/approach";
 import BigCard from "./approach/BigCard.astro";
 import BackgroundGradient from "../common/BackgroundGradient.astro";
 import MediumCard from "./approach/MediumCard.astro";
 import SmallCard from "./approach/SmallCard.astro";
 
 const { totalCommits } = githubData;
+const { title, description, cards } = approachData;
 ---
 
 <section id="approach" class="relative overflow-hidden py-24">
@@ -22,23 +24,30 @@ const { totalCommits } = githubData;
   <div class="container mx-auto px-6">
     <div class="mb-16 max-w-2xl">
       <h2 class="text-3xl font-semibold text-white md:text-4xl">
-        Why Work With Me?
+        {title}
       </h2>
       <p class="mt-4 leading-relaxed text-white/70">
-        I'm a fullstack developer who builds secure, scalable, and
-        business-focused applications. My approach combines technical precision
-        with strategic thinking.
+        {description}
       </p>
     </div>
     <div class="grid auto-rows-[220px] gap-6 md:grid-cols-6">
       <!-- BIG CARD -->
-      <BigCard />
+      <BigCard
+        title={cards.solution.title}
+        description={cards.solution.description}
+        profile={cards.solution.profile}
+        badges={cards.solution.badges}
+      />
 
       <!-- MEDIUM -->
-      <MediumCard />
+      <MediumCard
+        title={cards.security.title}
+        description={cards.security.description}
+        icon={cards.security.icon}
+      />
 
       <!-- SMALL -->
-      <SmallCard totalCommits={totalCommits} />
+      <SmallCard totalCommits={totalCommits} data={cards} />
     </div>
   </div>
 </section>

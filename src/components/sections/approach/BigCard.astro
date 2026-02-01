@@ -1,5 +1,21 @@
 ---
 import { Icon } from "astro-icon/components";
+
+interface Props {
+  title: string;
+  description: string;
+  profile: {
+    name: string;
+    description: string;
+  };
+  badges: {
+    text: string;
+    icon: string;
+    color: string;
+  }[];
+}
+
+const { title, description, profile, badges } = Astro.props;
 ---
 
 <div
@@ -17,10 +33,9 @@ import { Icon } from "astro-icon/components";
   </div>
   <div>
     <Icon name="lucide:lightbulb" class="h-8 w-8 text-purple-400" />
-    <h3 class="mt-4 text-2xl font-semibold text-white">Solution First</h3>
+    <h3 class="mt-4 text-2xl font-semibold text-white">{title}</h3>
     <p class="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
-      I don't just write code. I analyze your problem and engineer the most
-      efficient solution for real business impact.
+      {description}
     </p>
   </div>
   <div
@@ -35,55 +50,24 @@ import { Icon } from "astro-icon/components";
       />
     </div>
     <div class="col-span-4 md:col-span-3">
-      <p class="text-lg font-semibold text-white">Ferry Pratama</p>
+      <p class="text-lg font-semibold text-white">{profile.name}</p>
       <p class="text-sm leading-relaxed text-white/60">
-        Fullstack Developer specializing in modern JavaScript ecosystems (Astro,
-        React, Node.js, etc). I build secure and scalable web applications with
-        a strong focus on performance and clean architecture.
+        {profile.description}
       </p>
     </div>
 
     <!-- Badge Wrapper -->
     <div class="col-span-4 flex flex-wrap gap-2">
-      <!-- Security -->
-      <span
-        class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300 backdrop-blur-md"
-      >
-        <Icon name="lucide:shield-check" class="h-4 w-4" />
-        Security-Conscious
-      </span>
-
-      <!-- Performance -->
-      <span
-        class="inline-flex items-center gap-2 rounded-full border border-purple-400/30 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-300 backdrop-blur-md"
-      >
-        <Icon name="lucide:zap" class="h-4 w-4" />
-        Performance Focused
-      </span>
-
-      <!-- Clean Architecture -->
-      <span
-        class="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-xs font-medium text-indigo-300 backdrop-blur-md"
-      >
-        <Icon name="lucide:layers" class="h-4 w-4" />
-        Clean Architecture
-      </span>
-
-      <!-- Modern Stack -->
-      <span
-        class="inline-flex items-center gap-2 rounded-full border border-pink-400/30 bg-pink-500/10 px-3 py-1 text-xs font-medium text-pink-300 backdrop-blur-md"
-      >
-        <Icon name="lucide:cpu" class="h-4 w-4" />
-        Modern Stack
-      </span>
-
-      <!-- SEO -->
-      <span
-        class="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300 backdrop-blur-md"
-      >
-        <Icon name="lucide:search" class="h-4 w-4" />
-        SEO Optimized
-      </span>
+      {
+        badges.map((badge) => (
+          <span
+            class={`inline-flex items-center gap-2 rounded-full border border-${badge.color}-400/30 bg-${badge.color}-500/10 px-3 py-1 text-xs font-medium text-${badge.color}-300 backdrop-blur-md`}
+          >
+            <Icon name={badge.icon} class="h-4 w-4" />
+            {badge.text}
+          </span>
+        ))
+      }
     </div>
   </div>
 </div>
