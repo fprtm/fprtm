@@ -1,0 +1,115 @@
+---
+import { Icon } from "astro-icon/components";
+
+type color =
+  | "blue"
+  | "orange"
+  | "green"
+  | "red"
+  | "pink"
+  | "purple"
+  | "emerald"
+  | "yellow"
+  | "white";
+
+interface Props {
+  item: {
+    id: string;
+    name: string;
+    category: string;
+    description: string;
+    icon: string;
+    color: color;
+    colSpan?: number;
+  };
+  index: number;
+}
+
+const { item, index } = Astro.props;
+
+const colorStyles = {
+  blue: "border-blue-500/30 bg-blue-500/20 text-blue-400 hover:border-blue-500/50 hover:shadow-blue-500/20",
+  orange:
+    "border-orange-500/30 bg-orange-500/20 text-orange-400 hover:border-orange-500/50 hover:shadow-orange-500/20",
+  green:
+    "border-green-500/30 bg-green-500/20 text-green-400 hover:border-green-500/50 hover:shadow-green-500/20",
+  red: "border-red-500/30 bg-red-500/20 text-red-400 hover:border-red-500/50 hover:shadow-red-500/20",
+  pink: "border-pink-500/30 bg-pink-500/20 text-pink-400 hover:border-pink-500/50 hover:shadow-pink-500/20",
+  purple:
+    "border-purple-500/30 bg-purple-500/20 text-purple-400 hover:border-purple-500/50 hover:shadow-purple-500/20",
+  emerald:
+    "border-emerald-500/30 bg-emerald-500/20 text-emerald-400 hover:border-emerald-500/50 hover:shadow-emerald-500/20",
+  yellow:
+    "border-yellow-500/30 bg-yellow-500/20 text-yellow-400 hover:border-yellow-500/50 hover:shadow-yellow-500/20",
+  white:
+    "border-white/30 bg-white/20 text-white hover:border-white/50 hover:shadow-white/20",
+};
+
+const glowStyles = {
+  blue: "bg-blue-500/20 group-hover:bg-blue-500/40",
+  orange: "bg-orange-500/20 group-hover:bg-orange-500/40",
+  green: "bg-green-500/20 group-hover:bg-green-500/40",
+  red: "bg-red-500/20 group-hover:bg-red-500/40",
+  pink: "bg-pink-500/20 group-hover:bg-pink-500/40",
+  purple: "bg-purple-500/20 group-hover:bg-purple-500/40",
+  emerald: "bg-emerald-500/20 group-hover:bg-emerald-500/40",
+  yellow: "bg-yellow-500/20 group-hover:bg-yellow-500/40",
+  white: "bg-white/20 group-hover:bg-white/40",
+};
+
+const iconStyles = {
+  blue: "border-blue-500/30 text-blue-400",
+  orange: "border-orange-500/30 text-orange-400",
+  green: "border-green-500/30 text-green-400",
+  red: "border-red-500/30 text-red-400",
+  pink: "border-pink-500/30 text-pink-400",
+  purple: "border-purple-500/30 text-purple-400",
+  emerald: "border-emerald-500/30 text-emerald-400",
+  yellow: "border-yellow-500/30 text-yellow-400",
+  white: "border-white/30 text-white",
+};
+---
+
+<div
+  data-category={item.category}
+  class={`stack-card group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl ${item.colSpan === 2 ? "md:col-span-2" : "md:col-span-1"} ${colorStyles[item.color] || colorStyles.blue}`}
+  style={`animation-delay: ${index * 100}ms`}
+>
+  <!-- Hover Glow -->
+  <div
+    class={`absolute -top-20 -right-20 h-40 w-40 rounded-full blur-3xl transition-all duration-500 ${glowStyles[item.color] || glowStyles.blue}`}
+  >
+  </div>
+
+  <div class="relative z-10">
+    <div
+      class={`mb-4 inline-flex items-center justify-center rounded-xl border bg-white/5 p-3 transition-transform duration-500 group-hover:scale-110 ${iconStyles[item.color] || iconStyles.blue}`}
+    >
+      <Icon name={item.icon} class="h-8 w-8" />
+    </div>
+    <h3 class="text-xl font-bold text-white transition-colors">
+      {item.name}
+    </h3>
+    <p
+      class="mt-2 text-sm text-white/60 transition-colors group-hover:text-white/80"
+    >
+      {item.description}
+    </p>
+  </div>
+</div>
+
+<style>
+  /* Entrance Animation */
+  .stack-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
