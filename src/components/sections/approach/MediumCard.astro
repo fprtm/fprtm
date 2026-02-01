@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+  class="group relative col-span-6 overflow-hidden rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-3"
+>
+  <div
+    class="absolute -right-6 -bottom-6 opacity-5 transition-all duration-500 group-hover:-translate-y-2 group-hover:rotate-12 group-hover:opacity-10"
+  >
+    <Icon name="lucide:shield-check" class="h-32 w-32 text-purple-400" />
+  </div>
+
+  <Icon name="lucide:shield" class="h-6 w-6 text-purple-400" />
+  <h3 class="mt-3 text-lg font-semibold text-white">Security-Conscious</h3>
+  <p class="mt-2 text-sm text-white/70">
+    Security principles are integrated from day one, not added later.
+  </p>
+</div>

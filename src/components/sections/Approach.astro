@@ -1,26 +1,29 @@
 ---
 import { Icon } from "astro-icon/components";
 import { githubData } from "@/lib/data/common/github";
+import BigCard from "./approach/BigCard.astro";
+import BackgroundGradient from "../common/BackgroundGradient.astro";
+import MediumCard from "./approach/MediumCard.astro";
+import SmallCard from "./approach/SmallCard.astro";
 
 const { totalCommits } = githubData;
 ---
 
 <section id="approach" class="relative overflow-hidden py-24">
-  <!-- Background Gradient -->
-  <div
-    class="absolute inset-0 -z-20 bg-linear-to-br from-[#0f172a] via-[#111827] to-[#1e293b]"
-  >
-  </div>
-
-  <!-- Subtle Glow -->
-  <div
-    class="absolute top-0 left-1/3 -z-10 h-96 w-96 rounded-full bg-purple-600/20 blur-3xl"
-  >
-  </div>
+  <BackgroundGradient
+    background={{
+      from: "#0f172a",
+      via: "#111827",
+      to: "#1e293b",
+    }}
+    subtleGlow="purple"
+  />
 
   <div class="container mx-auto px-6">
     <div class="mb-16 max-w-2xl">
-      <h2 class="text-3xl font-semibold md:text-4xl">Why Work With Me?</h2>
+      <h2 class="text-3xl font-semibold text-white md:text-4xl">
+        Why Work With Me?
+      </h2>
       <p class="mt-4 leading-relaxed text-white/70">
         I'm a fullstack developer who builds secure, scalable, and
         business-focused applications. My approach combines technical precision
@@ -29,151 +32,13 @@ const { totalCommits } = githubData;
     </div>
     <div class="grid auto-rows-[220px] gap-6 md:grid-cols-6">
       <!-- BIG CARD -->
-      <div
-        class="group col-span-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/4 p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-3 md:row-span-2"
-      >
-        <div>
-          <Icon name="lucide:lightbulb" class="h-8 w-8 text-purple-400" />
-          <h3 class="mt-4 text-2xl font-semibold text-white">Solution First</h3>
-          <p class="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
-            I don't just write code. I analyze your problem and engineer the
-            most efficient solution for real business impact.
-          </p>
-        </div>
-        <div
-          class="grid items-center gap-5 rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl md:grid-cols-4"
-        >
-          <!-- Profile Image -->
-          <div class="col-span-4 md:col-span-1">
-            <img
-              src="/images/profile.jpg"
-              alt="profile"
-              class="h-full w-full rounded-xl border border-white/10 object-cover"
-            />
-          </div>
-          <div class="col-span-4 md:col-span-3">
-            <p class="text-lg font-semibold text-white">Ferry Pratama</p>
-            <p class="text-sm leading-relaxed text-white/60">
-              Fullstack Developer specializing in modern JavaScript ecosystems
-              (Astro, React, Node.js, etc). I build secure and scalable web
-              applications with a strong focus on performance and clean
-              architecture.
-            </p>
-          </div>
-
-          <!-- Badge Wrapper -->
-          <div class="col-span-4 flex flex-wrap gap-2">
-            <!-- Security -->
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300 backdrop-blur-md"
-            >
-              <Icon name="lucide:shield-check" class="h-4 w-4" />
-              Security-Conscious
-            </span>
-
-            <!-- Performance -->
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-purple-400/30 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-300 backdrop-blur-md"
-            >
-              <Icon name="lucide:zap" class="h-4 w-4" />
-              Performance Focused
-            </span>
-
-            <!-- Clean Architecture -->
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-xs font-medium text-indigo-300 backdrop-blur-md"
-            >
-              <Icon name="lucide:layers" class="h-4 w-4" />
-              Clean Architecture
-            </span>
-
-            <!-- Modern Stack -->
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-pink-400/30 bg-pink-500/10 px-3 py-1 text-xs font-medium text-pink-300 backdrop-blur-md"
-            >
-              <Icon name="lucide:cpu" class="h-4 w-4" />
-              Modern Stack
-            </span>
-
-            <!-- SEO -->
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300 backdrop-blur-md"
-            >
-              <Icon name="lucide:search" class="h-4 w-4" />
-              SEO Optimized
-            </span>
-          </div>
-        </div>
-      </div>
+      <BigCard />
 
       <!-- MEDIUM -->
-      <div
-        class="group col-span-6 rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-3"
-      >
-        <Icon name="lucide:shield" class="h-6 w-6 text-purple-400" />
-        <h3 class="mt-3 text-lg font-semibold text-white">
-          Security-Conscious
-        </h3>
-        <p class="mt-2 text-sm text-white/70">
-          Security principles are integrated from day one, not added later.
-        </p>
-      </div>
+      <MediumCard />
 
       <!-- SMALL -->
-      <div
-        class="group col-span-6 rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-2"
-      >
-        <Icon name="lucide:zap" class="h-5 w-5 text-purple-400" />
-        <h3 class="mt-3 font-medium text-white">Flexible & Modern</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Choosing the right stack — not trends.
-        </p>
-      </div>
-      <!-- SMALL -->
-      <div
-        class="group col-span-6 flex flex-col justify-center rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-1"
-      >
-        <div class="flex items-center gap-2">
-          <Icon
-            name="lucide:git-commit-horizontal"
-            class="h-6 w-6 text-purple-400"
-          />
-          <span
-            class="text-xs font-medium tracking-wider text-purple-400 uppercase"
-          >
-            Active
-          </span>
-        </div>
-        <p class="mt-4 text-4xl font-bold text-white">{totalCommits}</p>
-        <p class="mt-1 text-sm text-white/60">Commits / Year</p>
-      </div>
-
-      <div
-        class="group col-span-6 rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-2"
-      >
-        <Icon name="lucide:rocket" class="h-5 w-5 text-purple-400" />
-        <h3 class="mt-3 font-medium text-white">Performance Matters</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Speed and efficiency are standards.
-        </p>
-      </div>
-
-      <div
-        class="group col-span-6 rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-2"
-      >
-        <Icon name="lucide:server" class="h-5 w-5 text-purple-400" />
-        <h3 class="mt-3 font-medium text-white">Cloud Ready</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Deploying scalable apps on AWS, Vercel, or VPS.
-        </p>
-      </div>
-      <div
-        class="group col-span-6 rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-2"
-      >
-        <Icon name="lucide:brain" class="h-5 w-5 text-purple-400" />
-        <h3 class="mt-3 font-medium text-white">Structured & Scalable</h3>
-        <p class="mt-2 text-sm text-white/70">Clean architecture that grows.</p>
-      </div>
+      <SmallCard totalCommits={totalCommits} />
     </div>
   </div>
 </section>

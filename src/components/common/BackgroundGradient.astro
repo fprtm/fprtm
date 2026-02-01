@@ -1,0 +1,27 @@
+---
+interface Props {
+  background?: {
+    from: string;
+    via: string;
+    to: string;
+  };
+  subtleGlow?: string;
+}
+
+const {
+  background = { from: "#0f172a", via: "#111827", to: "#1e293b" },
+  subtleGlow = "purple",
+} = Astro.props;
+---
+
+<!-- Background Gradient -->
+<div
+  class={`absolute inset-0 -z-20 bg-linear-to-br from-[${background.from}] via-[${background.via}] to-[${background.to}]`}
+>
+</div>
+
+<!-- Subtle Glow -->
+<div
+  class={`absolute top-0 left-1/3 -z-10 h-96 w-96 rounded-full bg-[${subtleGlow}] blur-3xl`}
+>
+</div>
