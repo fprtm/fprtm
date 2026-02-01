@@ -1,5 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
+import { githubData } from "@/lib/data/common/github";
+
+const { totalCommits } = githubData;
 ---
 
 <section id="approach" class="relative overflow-hidden py-24">
@@ -128,13 +131,21 @@ import { Icon } from "astro-icon/components";
       </div>
       <!-- SMALL -->
       <div
-        class="group col-span-6 rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-1"
+        class="group col-span-6 flex flex-col justify-center rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-1"
       >
-        <Icon name="lucide:zap" class="h-5 w-5 text-purple-400" />
-        <h3 class="mt-3 font-medium text-white">Flexible & Modern</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Choosing the right stack — not trends.
-        </p>
+        <div class="flex items-center gap-2">
+          <Icon
+            name="lucide:git-commit-horizontal"
+            class="h-6 w-6 text-purple-400"
+          />
+          <span
+            class="text-xs font-medium tracking-wider text-purple-400 uppercase"
+          >
+            Active
+          </span>
+        </div>
+        <p class="mt-4 text-4xl font-bold text-white">{totalCommits}</p>
+        <p class="mt-1 text-sm text-white/60">Commits / Year</p>
       </div>
 
       <div
@@ -150,9 +161,11 @@ import { Icon } from "astro-icon/components";
       <div
         class="group col-span-6 rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-2"
       >
-        <Icon name="lucide:brain" class="h-5 w-5 text-purple-400" />
-        <h3 class="mt-3 font-medium text-white">Structured & Scalable</h3>
-        <p class="mt-2 text-sm text-white/70">Clean architecture that grows.</p>
+        <Icon name="lucide:server" class="h-5 w-5 text-purple-400" />
+        <h3 class="mt-3 font-medium text-white">Cloud Ready</h3>
+        <p class="mt-2 text-sm text-white/70">
+          Deploying scalable apps on AWS, Vercel, or VPS.
+        </p>
       </div>
       <div
         class="group col-span-6 rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-2"
