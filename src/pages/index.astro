@@ -3,15 +3,25 @@ import Layout from "@/layouts/Layout.astro";
 import "@/styles/global.css";
 import Navbar from "@/components/common/Navbar.astro";
 import Hero from "@/components/sections/Hero.astro";
+import Approach from "@/components/sections/Approach.astro";
+import Stack from "@/components/sections/Stack.astro";
 
 // Data Imports
 import { navItems, navCta } from "@/lib/data/common/navigation";
 import { logoData } from "@/lib/data/common/logo";
-import { heroData } from "@/lib/data/home/hero";
+import { heroData } from "@/lib/data/sections/hero";
+import { stackData } from "@/lib/data/sections/stack";
 import { code } from "@/lib/data";
 ---
 
 <Layout>
   <Navbar navItems={navItems} logoData={logoData} ctaData={navCta} />
   <Hero heroData={heroData} code={code} />
+  <Approach />
+  <Stack
+    title={stackData.title}
+    description={stackData.description}
+    tabs={stackData.tabs}
+    items={stackData.items}
+  />
 </Layout>
