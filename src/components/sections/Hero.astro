@@ -1,5 +1,5 @@
 ---
-import HeroBackground from "./hero/HeroBackground.astro";
+import BackgroundAnimate from "../common/BackgroundAnimate.astro";
 import HeroCodeCard from "./hero/HeroCodeCard.astro";
 import HeroContent from "./hero/HeroContent.astro";
 
@@ -22,7 +22,7 @@ const { heroData, code } = Astro.props;
 
 <section class="flex min-h-screen w-full items-center py-20">
   <!-- Background Glass Blur -->
-  <HeroBackground />
+  <BackgroundAnimate />
   <!-- Content -->
   <div class="container mx-auto grid items-center gap-16 px-6 md:grid-cols-2">
     <!-- LEFT: Text Content -->
