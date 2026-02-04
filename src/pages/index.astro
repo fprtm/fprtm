@@ -5,23 +5,32 @@ import Navbar from "@/components/common/Navbar.astro";
 import Hero from "@/components/sections/Hero.astro";
 import Approach from "@/components/sections/Approach.astro";
 import Stack from "@/components/sections/Stack.astro";
-
+import Projects from "@/components/sections/Projects.astro";
+import Services from "@/components/sections/Services.astro";
 // Data Imports
 import { navItems, navCta } from "@/lib/data/common/navigation";
 import { logoData } from "@/lib/data/common/logo";
 import { heroData } from "@/lib/data/sections/hero";
 import { stackData } from "@/lib/data/sections/stack";
+import { servicesData } from "@/lib/data/sections/services";
+import { approachData } from "@/lib/data/sections/approach";
 import { code } from "@/lib/data";
 ---
 
 <Layout>
   <Navbar navItems={navItems} logoData={logoData} ctaData={navCta} />
   <Hero heroData={heroData} code={code} />
-  <Approach />
+  <Approach
+    title={approachData.title}
+    description={approachData.description}
+    cards={approachData.cards}
+  />
   <Stack
     title={stackData.title}
     description={stackData.description}
     tabs={stackData.tabs}
     items={stackData.items}
   />
+  <Projects />
+  <Services title={servicesData.title} items={servicesData.items} />
 </Layout>

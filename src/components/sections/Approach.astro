@@ -1,22 +1,28 @@
 ---
 import { Icon } from "astro-icon/components";
 import { githubData } from "@/lib/data/common/github";
-import { approachData } from "@/lib/data/sections/approach";
 import BigCard from "./approach/BigCard.astro";
 import BackgroundGradient from "../common/BackgroundGradient.astro";
 import MediumCard from "./approach/MediumCard.astro";
 import SmallCard from "./approach/SmallCard.astro";
 
 const { totalCommits } = githubData;
-const { title, description, cards } = approachData;
+
+interface Props {
+  title: string;
+  description: string;
+  cards: any;
+}
+
+const { title, description, cards } = Astro.props;
 ---
 
 <section id="approach" class="relative overflow-hidden py-24">
   <BackgroundGradient
     background={{
-      from: "#0f172a",
-      via: "#111827",
-      to: "#1e293b",
+      from: "from-slate-900",
+      via: "via-gray-900",
+      to: "to-slate-800",
     }}
     subtleGlow="purple"
   />
