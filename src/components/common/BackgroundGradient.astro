@@ -9,19 +9,34 @@ interface Props {
 }
 
 const {
-  background = { from: "#0f172a", via: "#111827", to: "#1e293b" },
+  background = {
+    from: "from-slate-900",
+    via: "via-gray-900",
+    to: "to-slate-800",
+  },
   subtleGlow = "purple",
 } = Astro.props;
+
+const glowColors: Record<string, string> = {
+  purple: "bg-purple-500",
+  emerald: "bg-emerald-500",
+  blue: "bg-blue-500",
+  orange: "bg-orange-500",
+  pink: "bg-pink-500",
+  cyan: "bg-cyan-500",
+};
+
+const glowClass = glowColors[subtleGlow] || subtleGlow;
 ---
 
 <!-- Background Gradient -->
 <div
-  class={`absolute inset-0 -z-20 bg-linear-to-br from-[${background.from}] via-[${background.via}] to-[${background.to}]`}
+  class={`absolute inset-0 -z-20 bg-linear-to-br ${background.from} ${background.via} ${background.to}`}
 >
 </div>
 
 <!-- Subtle Glow -->
 <div
-  class={`absolute top-0 left-1/3 -z-10 h-96 w-96 rounded-full bg-[${subtleGlow}] blur-3xl`}
+  class={`absolute top-0 left-1/3 -z-10 h-96 w-96 rounded-full opacity-20 blur-3xl ${glowClass}`}
 >
 </div>
