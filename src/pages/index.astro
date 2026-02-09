@@ -8,6 +8,7 @@ import Stack from "@/components/sections/Stack.astro";
 import Projects from "@/components/sections/Projects.astro";
 import Services from "@/components/sections/Services.astro";
 import About from "@/components/sections/About.astro";
+import Footer from "@/components/common/Footer.astro";
 // Data Imports
 import { navItems, navCta } from "@/lib/data/common/navigation";
 import { logoData } from "@/lib/data/common/logo";
@@ -17,6 +18,7 @@ import { servicesData } from "@/lib/data/sections/services";
 import { aboutData } from "@/lib/data/sections/about";
 import { approachData } from "@/lib/data/sections/approach";
 import { code } from "@/lib/data";
+import { footerData } from "@/lib/data/common/footer";
 ---
 
 <Layout>
@@ -42,4 +44,9 @@ import { code } from "@/lib/data";
   />
   <Projects />
   <Services title={servicesData.title} items={servicesData.items} />
+  <Footer
+    cta={footerData.cta}
+    socialLinks={footerData.socialLinks}
+    copyright={footerData.copyright}
+  />
 </Layout>
