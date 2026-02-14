@@ -24,19 +24,32 @@ interface Props {
   copyright: {
     text: string;
   };
+  repoTemplate: {
+    description: string;
+    repo: {
+      text: string;
+      href: string;
+      icon: string;
+    };
+  };
 }
 
-const { cta, socialLinks, copyright } = Astro.props;
+const { cta, socialLinks, copyright, repoTemplate } = Astro.props;
 ---
 
-<footer id="contact" class="relative bg-[#0a0a0a] py-24">
+<footer
+  id="contact"
+  class="relative border-t border-slate-700 bg-(--color-midnight-slate) py-24"
+>
   <div class="container mx-auto px-6">
     <!-- CTA Section -->
     <div class="mb-16 text-center">
-      <h2 class="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+      <h2
+        class="text-4xl font-bold text-(--color-text-main) md:text-5xl lg:text-6xl"
+      >
         {cta.title}
       </h2>
-      <p class="mx-auto mt-6 max-w-xl text-lg text-gray-400">
+      <p class="mx-auto mt-6 max-w-xl text-lg text-(--color-text-muted)">
         {cta.description}
       </p>
 
@@ -46,7 +59,7 @@ const { cta, socialLinks, copyright } = Astro.props;
       >
         <a
           href={cta.primaryAction.href}
-          class="group flex items-center gap-3 rounded-full bg-white px-8 py-4 text-lg font-semibold text-black transition-all hover:scale-105 hover:bg-gray-100"
+          class="group btn-gradient flex items-center gap-3 rounded-full px-8 py-4 text-lg font-semibold transition-all hover:scale-105"
         >
           <Icon name={cta.primaryAction.icon} class="h-5 w-5" />
           {cta.primaryAction.text}
@@ -55,7 +68,7 @@ const { cta, socialLinks, copyright } = Astro.props;
           href={cta.secondaryAction.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="group flex items-center gap-3 rounded-full border border-white/20 bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5"
+          class="group flex items-center gap-3 rounded-full border border-slate-700 bg-(--color-light-navy) px-8 py-4 text-lg font-semibold text-(--color-text-main) transition-all hover:border-(--color-electric-blue) hover:bg-slate-700"
         >
           <Icon name={cta.secondaryAction.icon} class="h-5 w-5" />
           {cta.secondaryAction.text}
@@ -64,7 +77,7 @@ const { cta, socialLinks, copyright } = Astro.props;
     </div>
 
     <!-- Divider -->
-    <div class="mb-12 h-px w-full bg-white/10"></div>
+    <div class="mb-12 h-px w-full bg-slate-700"></div>
 
     <!-- Bottom Section -->
     <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
@@ -76,7 +89,7 @@ const { cta, socialLinks, copyright } = Astro.props;
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-gray-400 transition-colors hover:text-white"
+              class="text-(--color-text-muted) transition-colors hover:text-(--color-cyber-teal)"
               aria-label={link.name}
             >
               <Icon name={link.icon} class="h-6 w-6" />
@@ -86,9 +99,22 @@ const { cta, socialLinks, copyright } = Astro.props;
       </div>
 
       <!-- Copyright -->
-      <p class="text-sm text-gray-500">
-        {copyright.text}
-      </p>
+      <div class="flex flex-col items-end gap-2">
+        <p class="text-sm text-(--color-text-muted)">
+          {copyright.text}
+          {repoTemplate.description}
+        </p>
+        <a
+          href={repoTemplate.repo.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-muted flex items-center gap-2 text-xs transition-colors hover:text-(--color-cyber-teal)"
+          aria-label={repoTemplate.repo.text}
+        >
+          <Icon name={repoTemplate.repo.icon} class="h-4 w-4" />
+          {repoTemplate.repo.text}
+        </a>
+      </div>
     </div>
   </div>
 </footer>

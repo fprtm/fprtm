@@ -4,10 +4,7 @@ import { Icon } from "astro-icon/components";
 interface Props {
   title: string;
   description: string;
-  profile: {
-    name: string;
-    description: string;
-  };
+
   badges: {
     text: string;
     icon: string;
@@ -15,59 +12,42 @@ interface Props {
   }[];
 }
 
-const { title, description, profile, badges } = Astro.props;
+const { title, description, badges } = Astro.props;
 ---
 
 <div
-  class="group relative col-span-6 flex flex-col gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/4 p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 md:col-span-3 md:row-span-2"
+  class="group relative col-span-6 flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-700 bg-(--color-light-navy) p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-(--color-electric-blue) md:col-span-3 md:row-span-2"
 >
   <div
-    class="absolute -top-10 -right-10 h-64 w-64 rounded-full bg-purple-500/10 blur-3xl transition-all duration-500 group-hover:bg-purple-500/20"
+    class="absolute -top-10 -right-10 h-64 w-64 rounded-full bg-(--color-electric-blue)/10 blur-3xl transition-all duration-500 group-hover:bg-(--color-electric-blue)/20"
   >
   </div>
 
   <div
     class="absolute top-2 right-2 opacity-5 transition-transform duration-500 group-hover:rotate-12 group-hover:opacity-10"
   >
-    <Icon name="lucide:lightbulb" class="h-48 w-48 text-purple-400" />
+    <Icon name="lucide:lightbulb" class="h-48 w-48 text-(--color-cyber-teal)" />
   </div>
   <div>
-    <Icon name="lucide:lightbulb" class="h-8 w-8 text-purple-400" />
-    <h3 class="mt-4 text-2xl font-semibold text-white">{title}</h3>
-    <p class="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
+    <Icon name="lucide:lightbulb" class="h-8 w-8 text-(--color-cyber-teal)" />
+    <h3 class="mt-4 text-2xl font-semibold text-(--color-text-main)">
+      {title}
+    </h3>
+    <p class="mt-4 max-w-sm text-sm leading-relaxed text-(--color-text-muted)">
       {description}
     </p>
   </div>
-  <div
-    class="grid items-center gap-5 rounded-2xl border border-white/10 bg-white/4 p-6 backdrop-blur-xl md:grid-cols-4"
-  >
-    <!-- Profile Image -->
-    <div class="col-span-4 md:col-span-1">
-      <img
-        src="/images/profile.jpg"
-        alt="profile"
-        class="h-full w-full rounded-xl border border-white/10 object-cover"
-      />
-    </div>
-    <div class="col-span-4 md:col-span-3">
-      <p class="text-lg font-semibold text-white">{profile.name}</p>
-      <p class="text-sm leading-relaxed text-white/60">
-        {profile.description}
-      </p>
-    </div>
 
-    <!-- Badge Wrapper -->
-    <div class="col-span-4 flex flex-wrap gap-2">
-      {
-        badges.map((badge) => (
-          <span
-            class={`inline-flex items-center gap-2 rounded-full border border-${badge.color}-400/30 bg-${badge.color}-500/10 px-3 py-1 text-xs font-medium text-${badge.color}-300 backdrop-blur-md`}
-          >
-            <Icon name={badge.icon} class="h-4 w-4" />
-            {badge.text}
-          </span>
-        ))
-      }
-    </div>
+  <div class="mt-8 flex flex-wrap gap-2">
+    {
+      badges.map((badge) => (
+        <span
+          class={`inline-flex items-center gap-2 rounded-full border border-${badge.color}-400/30 bg-${badge.color}-500/10 px-3 py-1 text-xs font-medium text-${badge.color}-300 backdrop-blur-md`}
+        >
+          <Icon name={badge.icon} class="h-4 w-4" />
+          {badge.text}
+        </span>
+      ))
+    }
   </div>
 </div>

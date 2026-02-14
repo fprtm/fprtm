@@ -6,12 +6,7 @@ export const approachData = {
     solution: {
       title: "Solution First",
       description:
-        "I don't just write code. I analyze your problem and engineer the most efficient solution for real business impact.",
-      profile: {
-        name: "Ferry Pratama",
-        description:
-          "Fullstack Developer specializing in modern JavaScript ecosystems (Astro, React, Node.js, etc). I build secure and scalable web applications with a strong focus on performance and clean architecture.",
-      },
+        "I design and build secure, high-performance digital solutions with clean architecture and a modern technology stack. Every system is optimized for scalability, maintainability, and SEO from day one—so your product runs fast, stays safe, and grows without friction.",
       badges: [
         {
           text: "Security-Conscious",

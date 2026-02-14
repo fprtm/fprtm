@@ -15,18 +15,20 @@ const { title, description, buttons, badges } = Astro.props;
 ---
 
 <div class="space-y-6">
-  <h1 class="text-primary text-4xl leading-tight font-bold md:text-5xl">
+  <h1
+    class="text-4xl leading-tight font-bold text-(--color-text-main) md:text-5xl"
+  >
     {title}
   </h1>
 
-  <p class="text-primary/80 max-w-lg leading-relaxed">
+  <p class="max-w-lg leading-relaxed text-(--color-text-muted)">
     {description}
   </p>
 
   <div class="flex flex-wrap gap-4 pt-2">
     <a
       href={buttons.primary.href}
-      class="bg-primary flex items-center gap-2 rounded-lg px-5 py-2.5 text-white transition hover:opacity-90"
+      class="btn-gradient flex items-center gap-2 rounded-lg px-5 py-2.5 transition hover:opacity-90"
     >
       <Icon name={buttons.primary.icon} class="h-4 w-4" />
       {buttons.primary.text}
@@ -34,14 +36,14 @@ const { title, description, buttons, badges } = Astro.props;
 
     <a
       href={buttons.secondary.href}
-      class="border-primary text-primary hover:bg-primary flex items-center gap-2 rounded-lg border px-5 py-2.5 transition hover:text-white"
+      class="flex items-center gap-2 rounded-lg border border-(--color-slate-700) px-5 py-2.5 text-(--color-text-main) transition hover:bg-(--color-slate-700)"
     >
       <Icon name={buttons.secondary.icon} class="h-4 w-4" />
       {buttons.secondary.text}
     </a>
   </div>
 
-  <div class="text-primary/70 flex items-center gap-2 pt-4 text-sm">
+  <div class="flex items-center gap-2 pt-4 text-sm text-(--color-text-muted)">
     <span>{badges[0].text}</span>
     <Icon name={badges[0].icon} class="h-4 w-4" />
     <span>{badges[1].text}</span>
