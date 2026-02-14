@@ -38,6 +38,14 @@ export const footerData = {
     },
   ],
   copyright: {
-    text: "© 2024 Ferry Pratama. Built with Astro & Passion.",
+    text: "© 2026 Ferry Pratama.",
+  },
+  repoTemplate: {
+    description: "Free for personal use. Commercial use requires permission.",
+    repo: {
+      text: "Download Template",
+      href: "https://github.com/ferrypratamaa/ferrypratama",
+      icon: "lucide:github",
+    },
   },
 };

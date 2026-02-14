@@ -7,22 +7,20 @@ import BackgroundAnimate from "../common/BackgroundAnimate.astro";
   <BackgroundAnimate />
   <div class="container mx-auto px-6">
     <div class="mb-16 max-w-2xl">
-      <h2
-        class="text-3xl font-semibold text-[var(--color-text-main)] md:text-4xl"
-      >
+      <h2 class="text-3xl font-semibold text-(--color-text-main) md:text-4xl">
         {"Selected Works"}
       </h2>
-      <p class="mt-4 leading-relaxed text-[var(--color-text-muted)]">
+      <p class="text-muted mt-4 leading-relaxed">
         {"Here are some of my recent projects"}
       </p>
     </div>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       <div
         accesskey="items-1"
-        class="group relative flex flex-col rounded-xl border border-[var(--color-slate-700)] bg-[var(--color-light-navy)] shadow-sm transition hover:-translate-y-1 hover:border-[var(--color-electric-blue)] hover:shadow-lg"
+        class="group relative flex flex-col rounded-xl border border-slate-700 bg-(--color-light-navy) shadow-sm transition hover:-translate-y-1 hover:border-(--color-electric-blue) hover:shadow-lg"
       >
         <span
-          class="absolute top-2 right-2 z-10 rounded-full border border-[var(--color-electric-blue)] bg-[var(--color-electric-blue)] px-5 py-1 text-white"
+          class="absolute top-2 right-2 z-10 rounded-full border border-(--color-electric-blue) bg-(--color-electric-blue) px-5 py-1 text-white"
           >New</span
         >
         <div class="aspect-3/2 w-full overflow-hidden rounded-t-xl">
@@ -34,41 +32,39 @@ import BackgroundAnimate from "../common/BackgroundAnimate.astro";
         </div>
         <div class="flex flex-col gap-2 p-6">
           <div>
-            <h3 class="font-semibold text-[var(--color-text-main)]">
-              Project Name
-            </h3>
+            <h3 class="font-semibold text-(--color-text-main)">Project Name</h3>
           </div>
           <div class="mb-4 line-clamp-2">
-            <p class="text-[var(--color-text-muted)]">
+            <p class="text-muted">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
               quod.
             </p>
           </div>
           <div class="mb-4 flex gap-2">
             <span
-              class="rounded-full border border-[var(--color-slate-700)] px-2 py-0.5 text-xs text-[var(--color-text-muted)]"
+              class="text-muted rounded-full border border-slate-700 px-2 py-0.5 text-xs"
               >Next.js</span
             >
             <span
-              class="rounded-full border border-[var(--color-slate-700)] px-2 py-0.5 text-xs text-[var(--color-text-muted)]"
+              class="text-muted rounded-full border border-slate-700 px-2 py-0.5 text-xs"
               >React</span
             >
             <span
-              class="rounded-full border border-[var(--color-slate-700)] px-2 py-0.5 text-xs text-[var(--color-text-muted)]"
+              class="text-muted rounded-full border border-slate-700 px-2 py-0.5 text-xs"
               >Node.js</span
             >
           </div>
           <div class="flex justify-between gap-2">
             <a
               href="#"
-              class="flex items-center gap-2 rounded-lg border border-[var(--color-slate-700)] px-4 py-2 text-[var(--color-text-main)] transition hover:bg-[var(--color-slate-700)]"
+              class="flex items-center gap-2 rounded-lg border border-slate-700 px-4 py-2 text-(--color-text-main) transition hover:bg-slate-700"
             >
               <span>Repo</span>
               <Icon name="lucide:arrow-right" />
             </a>
             <a
               href="#"
-              class="flex items-center gap-2 rounded-lg border border-[var(--color-slate-700)] px-4 py-2 text-[var(--color-text-main)] transition hover:bg-[var(--color-slate-700)]"
+              class="flex items-center gap-2 rounded-lg border border-slate-700 px-4 py-2 text-(--color-text-main) transition hover:bg-slate-700"
             >
               <span>Demo</span>
               <Icon name="lucide:arrow-right" />

@@ -21,7 +21,7 @@ const { title, description, buttons, badges } = Astro.props;
     {title}
   </h1>
 
-  <p class="max-w-lg leading-relaxed text-[var(--color-text-muted)]">
+  <p class="max-w-lg leading-relaxed text-(--color-text-muted)">
     {description}
   </p>
 
@@ -36,16 +36,14 @@ const { title, description, buttons, badges } = Astro.props;
 
     <a
       href={buttons.secondary.href}
-      class="flex items-center gap-2 rounded-lg border border-[var(--color-slate-700)] px-5 py-2.5 text-[var(--color-text-main)] transition hover:bg-[var(--color-slate-700)]"
+      class="flex items-center gap-2 rounded-lg border border-(--color-slate-700) px-5 py-2.5 text-(--color-text-main) transition hover:bg-(--color-slate-700)"
     >
       <Icon name={buttons.secondary.icon} class="h-4 w-4" />
       {buttons.secondary.text}
     </a>
   </div>
 
-  <div
-    class="flex items-center gap-2 pt-4 text-sm text-[var(--color-text-muted)]"
-  >
+  <div class="flex items-center gap-2 pt-4 text-sm text-(--color-text-muted)">
     <span>{badges[0].text}</span>
     <Icon name={badges[0].icon} class="h-4 w-4" />
     <span>{badges[1].text}</span>

@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(),
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),
@@ -18,5 +18,5 @@ export default defineConfig({
     },
   },
 
-  integrations: [icon()],
+  integrations: [icon(),
 });

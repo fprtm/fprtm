@@ -24,6 +24,19 @@ import { footerData } from "@/lib/data/common/footer";
 <Layout>
   <Navbar navItems={navItems} logoData={logoData} ctaData={navCta} />
   <Hero heroData={heroData} code={code} />
+  <Approach
+    title={approachData.title}
+    description={approachData.description}
+    cards={approachData.cards}
+  />
+  <!-- <Projects /> -->
+  <Services title={servicesData.title} items={servicesData.items} />
+  <Stack
+    title={stackData.title}
+    description={stackData.description}
+    tabs={stackData.tabs}
+    items={stackData.items}
+  />
   <About
     title={aboutData.title}
     bio={aboutData.bio}
@@ -31,22 +44,10 @@ import { footerData } from "@/lib/data/common/footer";
     profileImage={aboutData.profileImage}
     description={aboutData.description}
   />
-  <Approach
-    title={approachData.title}
-    description={approachData.description}
-    cards={approachData.cards}
-  />
-  <Stack
-    title={stackData.title}
-    description={stackData.description}
-    tabs={stackData.tabs}
-    items={stackData.items}
-  />
-  <Projects />
-  <Services title={servicesData.title} items={servicesData.items} />
   <Footer
     cta={footerData.cta}
     socialLinks={footerData.socialLinks}
     copyright={footerData.copyright}
+    repoTemplate={footerData.repoTemplate}
   />
 </Layout>

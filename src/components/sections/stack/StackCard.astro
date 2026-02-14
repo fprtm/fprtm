@@ -72,7 +72,7 @@ const iconStyles = {
 
 <div
   data-category={item.category}
-  class={`stack-card group relative overflow-hidden rounded-2xl border border-[var(--color-slate-700)] bg-[var(--color-light-navy)] p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl ${item.colSpan === 2 ? "md:col-span-2" : "md:col-span-1"} ${colorStyles[item.color] || colorStyles.blue}`}
+  class={`stack-card group relative overflow-hidden rounded-2xl border border-(--color-slate-700) bg-(--color-light-navy) p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl ${item.colSpan === 2 ? "md:col-span-2" : "md:col-span-1"} ${colorStyles[item.color] || colorStyles.blue}`}
   style={`animation-delay: ${index * 100}ms`}
 >
   <!-- Hover Glow -->
@@ -83,17 +83,15 @@ const iconStyles = {
 
   <div class="relative z-10">
     <div
-      class={`mb-4 inline-flex items-center justify-center rounded-xl border bg-[var(--color-midnight-slate)]/50 p-3 transition-transform duration-500 group-hover:scale-110 ${iconStyles[item.color] || iconStyles.blue}`}
+      class={`mb-4 inline-flex items-center justify-center rounded-xl border bg-(--color-midnight-slate)/50 p-3 transition-transform duration-500 group-hover:scale-110 ${iconStyles[item.color] || iconStyles.blue}`}
     >
       <Icon name={item.icon} class="h-8 w-8" />
     </div>
-    <h3
-      class="text-xl font-bold text-[var(--color-text-main)] transition-colors"
-    >
+    <h3 class="text-xl font-bold text-(--color-text-main) transition-colors">
       {item.name}
     </h3>
     <p
-      class="mt-2 text-sm text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-text-main)]"
+      class="mt-2 text-sm text-(--color-text-muted) transition-colors group-hover:text-(--color-text-main)"
     >
       {item.description}
     </p>

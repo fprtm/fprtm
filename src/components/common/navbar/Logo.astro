@@ -8,9 +8,9 @@ interface Props {
 const { brandInitial, brandHandle, href } = Astro.props;
 ---
 
-<a href={href} class="flex flex-col items-start text-[var(--color-text-main)]">
+<a href={href} class="flex flex-col items-start text-(--color-text-main)">
   <span class="text-xl font-bold">{brandInitial}</span>
-  <span class="hidden text-xs text-[var(--color-text-muted)] md:block"
+  <span class="hidden text-xs text-(--color-text-muted) md:block"
     >{brandHandle}</span
   >
 </a>
