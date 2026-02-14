@@ -13,6 +13,6 @@ export const navItems: NavItem[] = [
 
 export const navCta = {
   text: "Let's Talk",
-  href: "#",
+  href: `mailto:${import.meta.env.EMAIL}`,
   icon: "lucide:arrow-right",
 };
