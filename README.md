@@ -1,46 +1,80 @@
-# Astro Starter Kit: Basics
+# Hi 👋 I’m Ferry Pratama
 
-```sh
-npm create astro@latest -- --template basics
-```
+A **Full-Stack Engineer**, **AI Enthusiast**, and **Cyber Security Explorer** who enjoys building scalable systems, intelligent applications, and secure digital solutions.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+I focus on **end-to-end development** — from backend architecture and cloud infrastructure to AI integration and security awareness.
 
-## 🚀 Project Structure
+- 🔭 Currently exploring **AI-powered applications** & **cyber security fundamentals**
+- 🌱 Learning **cloud-native back-end**, **LLM integration**, and **secure system design**
+- 💬 Ask me about **JavaScript**, **backend systems**, **AI**, or **web security**
+- 📫 Reach me on **LinkedIn: ferrypratamaa**
+- ⚡ Fun fact: I enjoy breaking things to understand how to secure them 😉
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## 🛠 Tech Stack
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Core
 
-## 🧞 Commands
+- JavaScript / TypeScript
+- Node.js
+- React / Next.js
 
-All commands are run from the root of the project, from a terminal:
+### Back-End & Cloud
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- RESTful API
+- Server Architecture
+- Cloud Computing (fundamental → intermediate)
 
-## 👀 Want to learn more?
+### AI & Data
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- AI integration (LLM-based apps)
+- API-driven AI workflows
+- Data processing fundamentals
+
+### Cyber Security (Growing Focus)
+
+- Web security basics
+- Authentication & authorization
+- Secure coding mindset
+
+---
+
+## ⚙️ Tools & Technologies
+
+<p align="left">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" width="30" />
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" width="30" />
+  <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" width="30" />
+  <img src="https://iconape.com/wp-content/files/gm/82643/svg/next-js.svg" width="30" />
+</p>
+
+---
+
+## 📊 GitHub Stats
+
+<p align="left">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=fprtm&show_icons=true&theme=algolia"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=fprtm&layout=compact&theme=algolia"/>
+</p>
+
+---
+
+## 📌 GitHub Focus
+
+This repository showcases:
+
+- Full-stack projects
+- AI experiments & integrations
+- Security-aware implementations
+- Learning notes & technical explorations
+
+**Goal:**  
+Build **useful, intelligent, and secure software** — not just working code.
+
+---
+
+## 📫 Reach Me
+
+- 💼 LinkedIn: https://linkedin.com/in/pratama-ferryagus
+- 🧠 GitHub: https://github.com/fprtm
