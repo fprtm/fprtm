@@ -1,14 +1,32 @@
 @import "tailwindcss";
 
-/* Custom Theme */
+/* Custom Theme: Deep Slate Intelligence */
 @theme {
-  --color-primary: var(--color-sky-900);
-  --color-secondary: var(--color-white);
-  --color-accent: var(--color-sky-500);
-  --color-accent-hover: var(--color-sky-600);
+  --color-midnight-slate: #0f172a;
+  --color-light-navy: #1e293b;
+  --color-electric-blue: #3b82f6;
+  --color-cyber-teal: #2dd4bf;
+  --color-crisp-white: #f8fafc;
+  --color-muted-silver: #94a3b8;
+  --color-slate-700: #334155;
+
+  /* Aliases for semantic usage */
+  --color-primary: var(--color-electric-blue);
+  --color-secondary: var(--color-cyber-teal);
+  --color-background: var(--color-midnight-slate);
+  --color-surface: var(--color-light-navy);
+  --color-text-main: var(--color-crisp-white);
+  --color-text-muted: var(--color-muted-silver);
 }
 
 /* Custom Utilities and Styles */
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+  }
+}
+
 .container {
   @apply mx-auto w-11/12 md:w-10/12 lg:w-10/12;
 }
@@ -38,11 +56,26 @@
 }
 
 .bg-animated {
-  background: linear-gradient(90deg, white, white, var(--color-primary));
+  background: linear-gradient(
+    90deg,
+    var(--color-midnight-slate),
+    var(--color-light-navy),
+    var(--color-midnight-slate)
+  );
   background-size: 300% 300%;
-  animation: gradientMove 5s ease infinite;
+  animation: gradientMove 15s ease infinite;
 }
 
 .blob-float {
   animation: floatBlob 5s ease infinite;
+}
+
+/* Gradient Text Utility */
+.text-gradient {
+  @apply bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent;
+}
+
+/* Button Gradient Utility */
+.btn-gradient {
+  @apply bg-gradient-to-r from-blue-600 to-teal-500 text-white transition-all duration-300 hover:from-blue-500 hover:to-teal-400;
 }

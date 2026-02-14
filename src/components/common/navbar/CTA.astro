@@ -12,7 +12,7 @@ const { text, href, icon } = Astro.props;
 
 <div class="flex items-center gap-2">
   <button
-    class="hover:bg-primary hidden items-center gap-2 rounded-lg border border-white bg-white px-3 py-1.5 transition hover:border-white hover:text-white md:flex"
+    class="btn-gradient hidden items-center gap-2 rounded-lg px-3 py-1.5 transition md:flex"
   >
     <span>{text}</span>
     <Icon name={icon} class="h-4 w-4" />
@@ -20,7 +20,7 @@ const { text, href, icon } = Astro.props;
 
   <button
     id="menuBtn"
-    class="md:hidden"
+    class="text-[var(--color-text-main)] md:hidden"
     aria-label="Toggle menu"
     aria-expanded="false"
   >
