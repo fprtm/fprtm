@@ -4,13 +4,13 @@ export const heroData = {
     "I am a Fullstack Developer who translates complex requirements into secure, scalable, and user-friendly applications. Flexible tech stacks, solid results.",
   buttons: {
     primary: {
-      text: "Download CV",
-      href: "#",
-      icon: "lucide:download",
+      text: "About Me",
+      href: "#about",
+      icon: "lucide:user",
     },
     secondary: {
-      text: "View My Work",
-      href: "#",
+      text: "Why Choose Me",
+      href: "#approach",
       icon: "lucide:arrow-right",
     },
   },

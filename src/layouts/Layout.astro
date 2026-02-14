@@ -1,4 +1,5 @@
 ---
+import "lenis/dist/lenis.css";
 interface Props {
   title?: string;
   description?: string;
@@ -19,8 +20,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={image} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO -->
@@ -54,6 +54,16 @@ const {
     class="overflow-x-hidden bg-(--color-midnight-slate) text-(--color-text-main)"
   >
     <slot />
+    <script>
+      import Lenis from "lenis";
+
+      new Lenis({
+        autoRaf: true,
+        lerp: 0.06,
+        wheelMultiplier: 0.8,
+        anchors: true,
+      });
+    </script>
   </body>
 </html>
 
